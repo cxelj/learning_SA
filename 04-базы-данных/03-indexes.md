@@ -126,6 +126,19 @@ Index Scan using idx_orders_user_status on orders  ← использует ин
 
 и **не индексировать** все подряд.
 
+## Практическое задание
+
+**Сценарий:** Таблица `orders` (10 млн строк) с колонками: id, user_id, status, total, created_at. Частые запросы:
+- `SELECT * FROM orders WHERE user_id = ?`
+- `SELECT * FROM orders WHERE status = 'pending' AND created_at > '2025-01-01'`
+- `SELECT * FROM orders WHERE total > 1000 ORDER BY created_at DESC`
+
+**Задание:**
+1. Какие индексы вы создадите для каждого запроса? Укажите тип (B-Tree / Hash / Partial / Composite).
+2. Можно ли создать один индекс, покрывающий все три запроса? Почему?
+3. Как индексы повлияют на скорость вставки новых записей?
+4. Что такое покрывающий индекс (covering index) и когда он полезен?
+
 ## Вопросы для самопроверки
 
 1. Почему индекс ускоряет поиск (что лежит внутри)?
