@@ -32,7 +32,7 @@
             -H "Content-type: application/json" \
             -H "Authorization: Bearer <TOKEN>" \
             -d '{
-              "priority": "done"
+              "status": "done"
             }'
     ```
 
